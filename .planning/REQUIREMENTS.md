@@ -32,4 +32,19 @@
 - **Hard-coded CSS**: No use of brittle `!important` overrides; must use CSS variables for update-safety.
 
 ## Traceability
-(To be filled by Roadmap)
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| BRAND-01 | Phase 1 | Pending |
+| BRAND-02 | Phase 1 | Pending |
+| BRAND-03 | Phase 1 | Pending |
+| BRAND-04 | Phase 1 | Pending |
+| BRAND-05 | Phase 2 | Pending |
+| BRAND-06 | Phase 1 | Pending |
+| BRAND-07 | Phase 4 | Pending |
+| EXP-01 | Phase 3 | Pending |
+| EXP-02 | Phase 3 | Pending |
+| EXP-03 | Phase 2 | Pending |
+| EXP-04 | Phase 3 | Pending |
+| EXP-05 | Phase 4 | Pending |
+
