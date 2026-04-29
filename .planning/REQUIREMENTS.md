@@ -13,7 +13,7 @@
   - `#FFFFFF` (White)
 - [ ] **BRAND-04**: Instance name set to "Escardar Mail" across all UI components.
 - [ ] **BRAND-05**: Custom Login page with branded background and slogan.
-- [ ] **BRAND-06**: Sender domain configured to use `@escardarmail.com` for system communications.
+- [ ] **BRAND-06**: Sender domain configured to use `@escardar.com` for system communications.
 - [ ] **BRAND-07**: System email templates rebranded to remove "Nextcloud" mentions.
 
 ### Experience (EXP)
