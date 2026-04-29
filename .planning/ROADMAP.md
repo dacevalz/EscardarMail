@@ -28,8 +28,8 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 02-01-PLAN.md — Configure base login branding (Slogan, Background)
-- [ ] 02-02-PLAN.md — Implement proprietary pre-login landing page
+- [x] 02-01-PLAN.md — Configure base login branding (Slogan, Background)
+- [x] 02-02-PLAN.md — Implement proprietary pre-login landing page
 - [ ] 02-03-PLAN.md — Deep visual polish and flow integration
 
 ### Phase 3: Mail-First Experience
