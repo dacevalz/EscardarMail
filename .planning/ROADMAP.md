@@ -17,8 +17,12 @@
   2. Browser tab shows the custom Escardar favicon.
   3. UI implements the brand color palette (Cream, Dark Grey/Blue, Light Blue/Grey).
   4. System emails are delivered from the `@escardarmail.com` domain.
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 01-01-PLAN.md — Configure base identity (Name, Logo, Favicon)
+- [ ] 01-02-PLAN.md — Implement custom color palette and system mail domain
 
 ### Phase 2: Deep Branding & Access
 **Goal**: Transform the pre-authentication and authentication flow to feel like a proprietary service.
