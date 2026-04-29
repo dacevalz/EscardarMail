@@ -21,18 +21,16 @@
 **UI hint**: yes
 
 Plans:
-- [ ] 01-01-PLAN.md — Configure base identity (Name, Logo, Favicon)
-- [ ] 01-02-PLAN.md — Implement custom color palette and system mail domain
+- [x] 01-01-PLAN.md — Configure base identity (Name, Logo, Favicon)
+- [x] 01-02-PLAN.md — Implement custom color palette and system mail domain
 
-### Phase 2: Deep Branding & Access
-**Goal**: Transform the pre-authentication and authentication flow to feel like a proprietary service.
-**Depends on**: Phase 1
-**Requirements**: BRAND-05, EXP-03
-**Success Criteria** (what must be TRUE):
-  1. Users land on a proprietary Escardar Mail landing page before reaching the login screen.
-  2. The login screen is visually distinct with a branded background and slogan.
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 02-01-PLAN.md — Configure base login branding (Slogan, Background)
+- [ ] 02-02-PLAN.md — Implement proprietary pre-login landing page
+- [ ] 02-03-PLAN.md — Deep visual polish and flow integration
 
 ### Phase 3: Mail-First Experience
 **Goal**: Redirect the user's primary interaction point to the Mail application and align its visuals with the brand.
