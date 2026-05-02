@@ -19,7 +19,7 @@
 ### Experience (EXP)
 - [ ] **EXP-01**: Mail app set as the default landing page upon login.
 - [ ] **EXP-02**: Mail UI visually aligned with Escardar brand using custom CSS.
-- [ ] **EXP-03**: Proprietary pre-login landing page implemented.
+- [x] **EXP-03**: Proprietary pre-login landing page implemented.
 - [ ] **EXP-04**: Curated app list implemented (hiding non-mail related utilities).
 - [ ] **EXP-05**: Branded welcome onboarding sequence for new users.
 
@@ -44,7 +44,7 @@
 | BRAND-07 | Phase 4 | Pending |
 | EXP-01 | Phase 3 | Pending |
 | EXP-02 | Phase 3 | Pending |
-| EXP-03 | Phase 2 | Pending |
+| EXP-03 | Phase 2 | Complete |
 | EXP-04 | Phase 3 | Pending |
 | EXP-05 | Phase 4 | Pending |
 

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker exec escardar_mail *)",
+      "Bash(docker network inspect *)",
+      "Bash(docker exec *)",
+      "Bash(docker compose *)",
+      "Bash(nslookup -type=TXT escardar.com 8.8.8.8)",
+      "Bash(nslookup -type=TXT mail._domainkey.escardar.com 8.8.8.8)",
+      "Bash(nslookup -type=TXT _dmarc.escardar.com 8.8.8.8)",
+      "Bash(nslookup -type=MX escardar.com 8.8.8.8)",
+      "Bash(nslookup -type=TXT escardar.com helios.dns-parking.com)",
+      "Bash(nslookup -type=TXT mail._domainkey.escardar.com helios.dns-parking.com)",
+      "Bash(nslookup -type=TXT _dmarc.escardar.com helios.dns-parking.com)",
+      "Bash(nslookup -type=A mail.escardar.com 8.8.8.8)",
+      "Skill(gsd:progress)"
+    ]
+  }
+}
