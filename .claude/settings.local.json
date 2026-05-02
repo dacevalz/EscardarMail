@@ -13,7 +13,25 @@
       "Bash(nslookup -type=TXT mail._domainkey.escardar.com helios.dns-parking.com)",
       "Bash(nslookup -type=TXT _dmarc.escardar.com helios.dns-parking.com)",
       "Bash(nslookup -type=A mail.escardar.com 8.8.8.8)",
-      "Skill(gsd:progress)"
+      "Skill(gsd:progress)",
+      "Bash(docker cp *)",
+      "Bash(curl -s http://localhost:8080/index.php/login)",
+      "Bash(curl *)",
+      "Bash(python3 -c \"import sys,json; [print\\(json.dumps\\(json.loads\\(l\\), indent=2\\)\\) for l in sys.stdin if 'escardar' in l.lower\\(\\) or 'landing' in l.lower\\(\\)]\")",
+      "Bash(git rm *)",
+      "Bash(rm -f nextcloud_core/apps/escardar_branding/appinfo/app.php)",
+      "Bash(python3 -c \"import sys,json; [print\\(json.loads\\(l\\).get\\('message',''\\)\\) for l in sys.stdin]\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs state advance-plan)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs requirements mark-complete BRAND-05 EXP-03)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs roadmap update-plan-progress --phase 02 --plan 03 --status complete)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs roadmap update-plan-progress 2)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs roadmap --help)",
+      "Bash(git log *)",
+      "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(phase-02\\): complete phase execution' --files .planning/ROADMAP.md .planning/STATE.md .planning/phases/02-deep-branding-access/02-VERIFICATION.md)",
+      "WebSearch"
     ]
   }
 }
