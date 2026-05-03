@@ -77,14 +77,14 @@ services:
   # Servidor de Correo (Docker Mailserver)
   # Los puertos SMTP/IMAP no pueden pasar por NPM (no son HTTP),
   # se exponen directamente desde este servidor.
-  # SSL: montar certs de certbot local para mail.${DOMAIN}
-  #   sudo certbot certonly --standalone -d mail.${DOMAIN}
+  # SSL: obtener cert con DNS challenge (el puerto 80 lo tiene NPM en .11):
+  #   certbot certonly --manual --preferred-challenges dns -d mail.escardar.com
   #   luego descomentar el volumen de letsencrypt abajo.
   # ----------------------------------------
   mail:
     image: mailserver/docker-mailserver:latest
     restart: always
-    hostname: mail.${DOMAIN}
+    hostname: ${MAIL_HOSTNAME}
     container_name: escardar_mail_server
     ports:
       - "25:25"
@@ -100,7 +100,7 @@ services:
       # - /etc/letsencrypt:/etc/letsencrypt:ro
     environment:
       - TZ=America/Bogota
-      - POSTFIX_MAILNAME=${DOMAIN}
+      - POSTFIX_MAILNAME=${MAIL_HOSTNAME}
       - ONE_DIR=1
       - SSL_TYPE=letsencrypt
       - ENABLE_QUOTAS=1
@@ -114,7 +114,7 @@ services:
     networks:
       backend:
         aliases:
-          - mail.${DOMAIN}
+          - ${MAIL_HOSTNAME}
 
 networks:
   backend:
