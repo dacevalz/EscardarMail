@@ -86,7 +86,7 @@
     display: block !important;
     width: 180px !important;
     height: 72px !important;
-    background: url('/apps/escardar_branding/img/logo.png') no-repeat center !important;
+    background: url('/custom_apps/escardar_branding/img/logo.png') no-repeat center !important;
     background-size: contain !important;
     margin: 0 auto 1.5rem !important;
 }
@@ -135,7 +135,7 @@ body #header .logo,
 body #header .logo-icon,
 body .header-left .logo,
 #header .logo-icon {
-    background-image: url('/apps/escardar_branding/img/logo.png') !important;
+    background-image: url('/custom_apps/escardar_branding/img/logo.png') !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -148,8 +148,8 @@ body .header-left .logo,
 }
 
 :root {
-    --logo-url: url('/apps/escardar_branding/img/logo.png') !important;
-    --logo-login-url: url('/apps/escardar_branding/img/logo.png') !important;
-    --image-logo: url('/apps/escardar_branding/img/logo.png') !important;
-    --logo-image: url('/apps/escardar_branding/img/logo.png') !important;
+    --logo-url: url('/custom_apps/escardar_branding/img/logo.png') !important;
+    --logo-login-url: url('/custom_apps/escardar_branding/img/logo.png') !important;
+    --image-logo: url('/custom_apps/escardar_branding/img/logo.png') !important;
+    --logo-image: url('/custom_apps/escardar_branding/img/logo.png') !important;
 }

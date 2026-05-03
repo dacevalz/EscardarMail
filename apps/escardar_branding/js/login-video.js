@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	video.setAttribute('playsinline', '');
 
 	var source = document.createElement('source');
-	source.src = '/apps/escardar_branding/img/video1.mp4';
+	source.src = '/custom_apps/escardar_branding/img/video1.mp4';
 	source.type = 'video/mp4';
 	video.appendChild(source);
 
