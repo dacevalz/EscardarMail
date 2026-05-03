@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # ----------------------------------------
   # Base de Datos (MariaDB)
@@ -19,7 +17,7 @@ services:
       - backend
 
   # ----------------------------------------
-  # Caché en Memoria (Redis) - Para Producción
+  # Caché en Memoria (Redis)
   # ----------------------------------------
   redis:
     image: redis:alpine
@@ -29,10 +27,13 @@ services:
 
   # ----------------------------------------
   # Aplicación Principal (Nextcloud)
+  # NPM en .11 enruta HTTPS → este servidor:8090
   # ----------------------------------------
   app:
     image: nextcloud:latest
     restart: always
+    ports:
+      - "8090:80"
     volumes:
       - nextcloud_data:/var/www/html
       - ./nextcloud_core/apps/escardar_branding:/var/www/html/apps/escardar_branding
@@ -46,13 +47,14 @@ services:
       - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
       - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
       - NEXTCLOUD_TRUSTED_DOMAINS=${DOMAIN}
-      # Las siguientes variables ayudan al Reverse Proxy (NPM) a funcionar bien
       - OVERWRITEPROTOCOL=https
       - OVERWRITECLIURL=https://${DOMAIN}
       - OVERWRITEHOST=${DOMAIN}
+    depends_on:
+      - db
+      - redis
     networks:
       - backend
-      - proxy # Red compartida con Nginx Proxy Manager
 
   # ----------------------------------------
   # Tareas en Segundo Plano (Cron)
@@ -62,6 +64,8 @@ services:
     restart: always
     volumes:
       - nextcloud_data:/var/www/html
+      - ./nextcloud_core/apps/escardar_branding:/var/www/html/apps/escardar_branding
+      - ./nextcloud_core/apps/escardar_mail:/var/www/html/apps/escardar_mail
     entrypoint: /cron.sh
     depends_on:
       - db
@@ -71,12 +75,16 @@ services:
 
   # ----------------------------------------
   # Servidor de Correo (Docker Mailserver)
+  # Los puertos SMTP/IMAP no pueden pasar por NPM (no son HTTP),
+  # se exponen directamente desde este servidor.
+  # SSL: montar certs de certbot local para mail.${DOMAIN}
+  #   sudo certbot certonly --standalone -d mail.${DOMAIN}
+  #   luego descomentar el volumen de letsencrypt abajo.
   # ----------------------------------------
   mail:
     image: mailserver/docker-mailserver:latest
     restart: always
-    hostname: mail
-    domainname: ${DOMAIN}
+    hostname: mail.${DOMAIN}
     container_name: escardar_mail_server
     ports:
       - "25:25"
@@ -88,29 +96,29 @@ services:
       - mailstate:/var/mail-state
       - mailconfig:/tmp/docker-mailserver
       - maillogs:/var/log/mail
-      # Deberás montar los certificados generados por NPM aquí más adelante:
-      # - /ruta/a/npm/letsencrypt/live/${DOMAIN}:/tmp/docker-mailserver/ssl:ro
+      # Descomentar cuando los certs estén generados en este servidor:
+      # - /etc/letsencrypt:/etc/letsencrypt:ro
     environment:
       - TZ=America/Bogota
-      - HOSTNAME=mail
-      - DOMAINNAME=${DOMAIN}
-      - SSL_TYPE=letsencrypt # Preparado para Let's Encrypt
+      - POSTFIX_MAILNAME=${DOMAIN}
+      - ONE_DIR=1
+      - SSL_TYPE=letsencrypt
       - ENABLE_QUOTAS=1
       - ENABLE_MANAGESIEVE=1
       - ENABLE_SIEVE=1
       - SPOOFING_PROTECTION=relaxed
-      - PERMIT_DOCKER=host
+      - PERMIT_DOCKER=connected-networks
+    cap_add:
+      - NET_ADMIN
+      - SYS_PTRACE
     networks:
-      - backend
-      - proxy
-      
+      backend:
+        aliases:
+          - mail.${DOMAIN}
+
 networks:
   backend:
-  proxy:
-    external: true
-    # IMPORTANTE: Reemplaza 'npm_network' con el nombre real de la red de Docker
-    # donde corre tu Nginx Proxy Manager (por ej: 'nginx-proxy-manager_default')
-    name: npm_network
+    driver: bridge
 
 volumes:
   nextcloud_db:
