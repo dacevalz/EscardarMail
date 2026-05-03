@@ -10,6 +10,6 @@
         <prelogin/>
     </types>
     <dependencies>
-        <nextcloud min_version="25" />
+        <nextcloud min-version="25" max-version="33"/>
     </dependencies>
 </info>

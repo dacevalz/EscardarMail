@@ -11,6 +11,6 @@
 	<namespace>EscardarMail</namespace>
 	<category>customization</category>
 	<dependencies>
-		<nextcloud min-version="25" max-version="31"/>
+		<nextcloud min-version="25" max-version="33"/>
 	</dependencies>
 </info>
