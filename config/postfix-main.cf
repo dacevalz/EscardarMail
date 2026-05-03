@@ -1,1 +1,3 @@
 smtpd_tls_auth_only = no
+smtp_tls_security_level = may
+smtp_tls_loglevel = 1
