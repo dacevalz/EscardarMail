@@ -14,10 +14,10 @@ class AutoProvisionListener implements IEventListener {
     private const MAIL_DOMAIN  = 'escardar.com';
     private const IMAP_HOST    = 'mail';
     private const IMAP_PORT    = 143;
-    private const IMAP_SSL     = 'tls';
+    private const IMAP_SSL     = 'none';
     private const SMTP_HOST    = 'mail';
     private const SMTP_PORT    = 587;
-    private const SMTP_SSL     = 'tls';
+    private const SMTP_SSL     = 'none';
 
     public function __construct(
         private IDBConnection $db,

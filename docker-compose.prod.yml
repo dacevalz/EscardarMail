@@ -96,6 +96,8 @@ services:
       - mailstate:/var/mail-state
       - mailconfig:/tmp/docker-mailserver
       - maillogs:/var/log/mail
+      - ./config/dovecot-local.conf:/etc/dovecot/conf.d/99-local.conf:ro
+      - ./config/postfix-main.cf:/tmp/docker-mailserver/postfix-main.cf:ro
       # Descomentar cuando los certs estén generados en este servidor:
       # - /etc/letsencrypt:/etc/letsencrypt:ro
     environment:
