@@ -31,7 +31,8 @@
       "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs roadmap --help)",
       "Bash(git log *)",
       "Bash(node __TRACKED_VAR__/.claude/get-shit-done/bin/gsd-tools.cjs commit 'docs\\(phase-02\\): complete phase execution' --files .planning/ROADMAP.md .planning/STATE.md .planning/phases/02-deep-branding-access/02-VERIFICATION.md)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(docker network *)"
     ]
   }
 }
