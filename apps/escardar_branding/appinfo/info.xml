@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://nextcloud.com/structure.xsd">
+    <id>escardar_branding</id>
+    <name>Escardar Mail Branding</name>
+    <description>Custom branding and visual identity for Escardar Mail</description>
+    <version>1.0.0</version>
+    <category>theming</category>
+    <namespace>EscardarBranding</namespace>
+    <types>
+        <prelogin/>
+    </types>
+    <dependencies>
+        <nextcloud min_version="25" />
+    </dependencies>
+</info>

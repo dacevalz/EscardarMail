@@ -1,0 +1,185 @@
+/* Escardar Mail - Landing Page Visuals */
+/* Brand Palette */
+:root {
+    --escardar-primary: #2C363F;
+    --escardar-cream: #F8F7E5;
+    --escardar-light: #E1E5F2;
+    --escardar-text: #111111;
+    --escardar-white: #FFFFFF;
+}
+
+/* =========================================
+   1. Page Foundation — Cream Background
+   ========================================= */
+
+/* Landing page base — cream brand background */
+body.landing-page,
+body,
+html {
+    background-color: #F8F7E5;
+    color: #111111;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================
+   2. Header / Branding Bar
+   ========================================= */
+
+.landing-header,
+header {
+    background-color: #2C363F;
+    color: #FFFFFF;
+    padding: 1.25rem 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(44, 54, 63, 0.3);
+}
+
+.landing-header h1,
+header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+}
+
+/* =========================================
+   3. Hero Section
+   ========================================= */
+
+.hero,
+.hero-section,
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    background-color: #F8F7E5;
+    background-image: linear-gradient(135deg, #F8F7E5 0%, #E1E5F2 100%);
+    flex: 1;
+    min-height: 60vh;
+}
+
+.hero h2,
+.hero-section h2,
+main h2 {
+    font-size: 3rem;
+    color: #2C363F;
+    font-weight: 800;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    max-width: 700px;
+}
+
+.hero p,
+.hero-section p,
+main p {
+    font-size: 1.2rem;
+    color: #111111;
+    max-width: 580px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.65;
+    opacity: 0.8;
+}
+
+/* =========================================
+   4. Client Login CTA Button
+   ========================================= */
+
+/* High-conversion primary CTA */
+.btn-login,
+.cta-button,
+.client-login-btn,
+a[href*="login"] {
+    display: inline-block;
+    background-color: #2C363F;
+    color: #FFFFFF;
+    padding: 1rem 2.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(44, 54, 63, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-login:hover,
+.cta-button:hover,
+.client-login-btn:hover {
+    background-color: #3e4d58;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(44, 54, 63, 0.28);
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.btn-login:active,
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(44, 54, 63, 0.25);
+}
+
+/* =========================================
+   5. Footer
+   ========================================= */
+
+.landing-footer,
+footer {
+    background-color: #2C363F;
+    color: #FFFFFF;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    opacity: 0.95;
+}
+
+.landing-footer a,
+footer a {
+    color: #E1E5F2;
+    text-decoration: none;
+}
+
+/* =========================================
+   6. Responsive Layout
+   ========================================= */
+
+@media (max-width: 768px) {
+    .hero h2,
+    .hero-section h2,
+    main h2 {
+        font-size: 2.25rem;
+    }
+
+    .hero p,
+    .hero-section p,
+    main p {
+        font-size: 1.05rem;
+    }
+
+    .btn-login,
+    .cta-button {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-header h1,
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .hero,
+    .hero-section,
+    main {
+        padding: 50px 16px;
+    }
+}

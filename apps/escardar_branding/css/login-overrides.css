@@ -1,0 +1,155 @@
+/* Escardar Mail — Login Overrides (NC33)
+   Vue renders: div.guest-box.login-box  ← the only card
+   footer.guest-box                      ← footer card (hide it)
+*/
+
+/* ── 1. Page background + full-viewport centering ───── */
+#body-login {
+    background-color: #0a0a0a !important;
+    background-image: none !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+/* Video background */
+#escardar-bg-video {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Overlay semitransparente para legibilidad */
+#body-login::after {
+    content: '' !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(10, 10, 10, 0.45) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+/* Todo el contenido encima del video y overlay */
+#body-login .wrapper,
+#body-login header,
+#body-login footer {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+/* Center .guest-content inside the wrapper */
+.guest-content {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* ── 2. Center the card and form ────────────────────── */
+/* .wrapper uses inline-block children — center them with text-align */
+.wrapper {
+    text-align: center !important;
+}
+
+/* Card itself: switch to block + margin auto for proper centering */
+.login-box {
+    display: block !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    max-width: 480px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    /* Brand styling */
+    background-color: #FFFFFF !important;
+    border: 1px solid #E1E5F2 !important;
+    box-shadow: 0 8px 32px rgba(44, 54, 63, 0.14) !important;
+    border-radius: 14px !important;
+}
+
+/* Form inside the card: full width, no extra layout */
+.login-form {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ── Logo above the login form ──────────────────────── */
+.login-form::before {
+    content: '' !important;
+    display: block !important;
+    width: 180px !important;
+    height: 72px !important;
+    background: url('/apps/escardar_branding/img/logo.png') no-repeat center !important;
+    background-size: contain !important;
+    margin: 0 auto 1.5rem !important;
+}
+
+/* ── 3. Hide the footer card (second white box) ──────── */
+footer.guest-box {
+    display: none !important;
+}
+
+/* ── 4. Primary button ──────────────────────────────── */
+#body-login .button-vue--vue-primary,
+#body-login input.login {
+    background-color: #2C363F !important;
+    border-color: #2C363F !important;
+    color: #FFFFFF !important;
+}
+
+#body-login .button-vue--vue-primary:hover,
+#body-login input.login:hover {
+    background-color: #3e4d58 !important;
+    border-color: #3e4d58 !important;
+}
+
+/* ── 5. Input focus accent ──────────────────────────── */
+#body-login .input-field__input:focus,
+#body-login input[type="text"]:focus,
+#body-login input[type="password"]:focus {
+    border-color: #2C363F !important;
+    outline: none !important;
+}
+
+/* ── 6. Header — reduce height ──────────────────────── */
+#body-login #header.header-guest {
+    height: 40px !important;
+    min-height: unset !important;
+    padding: 0 !important;
+}
+
+#body-login #header .logo {
+    background-image: none !important;
+}
+
+/* ── 7. Global Logo Override for Internal Apps ──────────────── */
+body .logo.logo-icon,
+body #header .logo,
+body #header .logo-icon,
+body .header-left .logo,
+#header .logo-icon {
+    background-image: url('/apps/escardar_branding/img/logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    width: 80px !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+}
+
+:root {
+    --logo-url: url('/apps/escardar_branding/img/logo.png') !important;
+    --logo-login-url: url('/apps/escardar_branding/img/logo.png') !important;
+    --image-logo: url('/apps/escardar_branding/img/logo.png') !important;
+    --logo-image: url('/apps/escardar_branding/img/logo.png') !important;
+}

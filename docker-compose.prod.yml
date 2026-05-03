@@ -36,8 +36,8 @@ services:
       - "8090:80"
     volumes:
       - nextcloud_data:/var/www/html
-      - ./nextcloud_core/apps/escardar_branding:/var/www/html/custom_apps/escardar_branding
-      - ./nextcloud_core/apps/escardar_mail:/var/www/html/custom_apps/escardar_mail
+      - ./apps/escardar_branding:/var/www/html/custom_apps/escardar_branding
+      - ./apps/escardar_mail:/var/www/html/custom_apps/escardar_mail
     environment:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DATABASE=${NEXTCLOUD_DB_NAME}
@@ -64,8 +64,8 @@ services:
     restart: always
     volumes:
       - nextcloud_data:/var/www/html
-      - ./nextcloud_core/apps/escardar_branding:/var/www/html/custom_apps/escardar_branding
-      - ./nextcloud_core/apps/escardar_mail:/var/www/html/custom_apps/escardar_mail
+      - ./apps/escardar_branding:/var/www/html/custom_apps/escardar_branding
+      - ./apps/escardar_mail:/var/www/html/custom_apps/escardar_mail
     entrypoint: /cron.sh
     depends_on:
       - db

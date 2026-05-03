@@ -1,0 +1,35 @@
+/* Escardar Mail Custom Branding */
+
+:root {
+    --color-primary: #2C363F;
+    --color-primary-light: #E1E5F2;
+    --color-background-plain: #F8F7E5;
+    --color-text: #111111;
+    --color-background-white: #FFFFFF;
+    --logo-url: url('/apps/escardar_branding/img/logo.png');
+    --logo-login-url: url('/apps/escardar_branding/img/logo.png');
+    --image-logo: url('/apps/escardar_branding/img/logo.png');
+    --logo-image: url('/apps/escardar_branding/img/logo.png');
+}
+
+.app-mail {
+    --color-primary: #2C363F;
+}
+
+/* ── 7. Global Logo Override for Internal Apps ──────────────── */
+body .logo.logo-icon,
+body #header .logo,
+body #header .logo-icon,
+body .header-left .logo,
+#header .logo-icon {
+    background-image: url('/apps/escardar_branding/img/logo.png') !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    filter: none !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    width: 80px !important;
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+}
